@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Mail, Calendar, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ProfilePreview = () => {
   const sampleProfiles = [
@@ -107,10 +108,12 @@ const ProfilePreview = () => {
                   </div>
                 </div>
                 
-                <Button className="w-full" variant="outline">
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  View Full Profile
-                </Button>
+                <Link to={`/profile/${profile.id}`}>
+                  <Button className="w-full" variant="outline">
+                    <ExternalLink className="h-4 w-4 mr-2" />
+                    View Full Profile
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}
